@@ -3640,6 +3640,8 @@
         activeOpenHatGain = null;
       }
 
+      const playTime = (scheduledTime && scheduledTime > audioCtx.currentTime) ? scheduledTime : 0;
+
       // 1. Play user custom .wav sample if loaded
       if (customSamples[drumType]) {
         const src = audioCtx.createBufferSource();
@@ -3650,7 +3652,13 @@
         gain.connect(masterGainNode);
 
         if (drumType === 'hatOpen') activeOpenHatGain = gain;
-        src.start(time);
+        src.onended = () => {
+          try {
+            src.disconnect();
+            gain.disconnect();
+          } catch(e) {}
+        };
+        src.start(playTime);
       }
       // 2. Play REAL STUDIO ACOUSTIC SAMPLE (Sabian AAX, Yamaha, CustomWorks, StarClassic)
       else if (realAcousticBuffers[drumType]) {
@@ -3671,7 +3679,13 @@
         gain.connect(masterGainNode);
 
         if (drumType === 'hatOpen') activeOpenHatGain = gain;
-        src.start(time);
+        src.onended = () => {
+          try {
+            src.disconnect();
+            gain.disconnect();
+          } catch(e) {}
+        };
+        src.start(playTime);
       }
       // 3. Fallback procedural synthesis
       else {

@@ -26,7 +26,7 @@
 
 <br/><br/>
 
-[![KeyBeat Acoustic Drum Studio Preview](preview.png)](index.html)
+[![KeyBeat Acoustic Drum Studio Preview](preview.webp)](index.html)
 
 </div>
 
