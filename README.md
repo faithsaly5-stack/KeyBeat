@@ -24,6 +24,10 @@
 [**MIDI Export**](#-daw-midi-export-specification) •
 [**FAQ**](#-troubleshooting--faq)
 
+<br/><br/>
+
+[![KeyBeat Acoustic Drum Studio Preview](preview.png)](index.html)
+
 </div>
 
 ---
