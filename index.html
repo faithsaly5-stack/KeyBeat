@@ -983,7 +983,7 @@
     .academy-stats-cluster {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -991,26 +991,121 @@
       background: rgba(245, 158, 11, 0.12);
       border: 1px solid var(--accent-gold);
       color: var(--accent-gold);
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 20px;
-      font-size: 0.82rem;
+      font-size: 0.80rem;
       font-weight: 800;
       display: flex;
       align-items: center;
       gap: 6px;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
+    }
+
+    .academy-xp-box {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 4px 10px;
+      min-width: 140px;
+    }
+
+    .academy-xp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--text-muted);
+    }
+
+    .academy-xp-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .academy-xp-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00d2ff, #38bdf8);
+      border-radius: 4px;
+      transition: width 0.4s ease-out;
+      box-shadow: 0 0 8px rgba(0, 210, 255, 0.5);
+    }
+
+    .career-score-pill {
+      background: rgba(255, 183, 3, 0.12);
+      border: 1px solid rgba(255, 183, 3, 0.4);
+      color: var(--accent-gold);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.80rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 12px rgba(255, 183, 3, 0.2);
     }
 
     .stars-counter {
       background: rgba(56, 189, 248, 0.1);
       border: 1px solid var(--accent-cyan);
       color: var(--accent-cyan);
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 20px;
-      font-size: 0.82rem;
+      font-size: 0.80rem;
       font-weight: 800;
       display: flex;
       align-items: center;
       gap: 6px;
+    }
+
+    /* Chapter Filter Tabs */
+    .academy-chapter-filters {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 1200px;
+      margin: 14px auto 0 auto;
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .chapter-tab-btn {
+      padding: 6px 14px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chapter-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .chapter-tab-btn.active {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.25));
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
     }
 
     /* Curriculum Cards Grid */
@@ -1019,7 +1114,7 @@
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 16px;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 12px auto 0 auto;
       width: 100%;
     }
 
@@ -1089,6 +1184,126 @@
     .stars-row .star-filled {
       color: var(--accent-gold);
       text-shadow: 0 0 8px rgba(255, 183, 3, 0.6);
+    }
+
+    .level-card.next-unlocked {
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+      animation: nextLevelPulse 2s infinite alternate;
+    }
+
+    @keyframes nextLevelPulse {
+      0% { box-shadow: 0 0 8px rgba(245, 158, 11, 0.2); }
+      100% { box-shadow: 0 0 22px rgba(245, 158, 11, 0.55); border-color: #f59e0b; }
+    }
+
+    .card-chapter-pill {
+      font-size: 0.64rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .card-score-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.70rem;
+      margin-top: 2px;
+    }
+
+    .card-highscore {
+      color: #94a3b8;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-highscore strong {
+      color: var(--accent-gold);
+      font-family: monospace;
+      font-size: 0.76rem;
+    }
+
+    .card-grade-badge {
+      font-size: 0.66rem;
+      font-weight: 900;
+      padding: 1px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .grade-sss {
+      background: linear-gradient(135deg, #ffd700, #ff007f);
+      color: #fff;
+      border-color: #ffd700;
+      text-shadow: 0 0 6px rgba(255, 215, 0, 0.9);
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+    }
+    .grade-ss {
+      background: rgba(255, 183, 3, 0.22);
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 8px rgba(255, 183, 3, 0.3);
+    }
+    .grade-s {
+      background: rgba(0, 210, 255, 0.22);
+      color: var(--accent-cyan);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
+    }
+    .grade-a {
+      background: rgba(6, 214, 160, 0.22);
+      color: var(--accent-green);
+      border-color: var(--accent-green);
+    }
+    .grade-b {
+      background: rgba(245, 158, 11, 0.18);
+      color: #f59e0b;
+      border-color: #f59e0b;
+    }
+    .grade-c {
+      background: rgba(100, 116, 139, 0.2);
+      color: #94a3b8;
+      border-color: #64748b;
+    }
+
+    /* Combo Fire Animation */
+    .hud-combo-fire {
+      color: #ff5722 !important;
+      text-shadow: 0 0 12px rgba(255, 87, 34, 0.9), 0 0 20px rgba(255, 193, 7, 0.7) !important;
+      animation: comboFlame 0.7s infinite alternate !important;
+    }
+    @keyframes comboFlame {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.15); }
+    }
+
+    /* Floating Arcade Hit Popups */
+    .arcade-hit-float {
+      position: absolute;
+      pointer-events: none;
+      font-size: 0.92rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      z-index: 100;
+      animation: arcadeFloatUp 0.65s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+    }
+    @keyframes arcadeFloatUp {
+      0% { opacity: 1; transform: translate(-50%, 0) scale(0.85); }
+      40% { opacity: 1; transform: translate(-50%, -18px) scale(1.15); }
+      100% { opacity: 0; transform: translate(-50%, -36px) scale(0.95); }
     }
 
     .level-title {
@@ -1566,38 +1781,133 @@
       background: var(--card-bg-gradient);
       border: 2px solid var(--accent-gold);
       border-radius: 16px;
-      padding: 32px 40px;
+      padding: 24px 28px;
       text-align: center;
-      max-width: 440px;
-      width: 90%;
+      max-width: 480px;
+      width: 92%;
       box-shadow: var(--shadow-lg), 0 0 40px rgba(245, 158, 11, 0.35);
       transform: scale(0.9);
       transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       color: var(--text-main);
     }
 
-    .celebration-modal-overlay.active .celebration-card {
-      transform: scale(1);
+    .celebration-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .celebration-badge-level {
+      font-size: 0.74rem;
+      font-weight: 900;
+      color: var(--accent-cyan);
+      background: rgba(0, 210, 255, 0.15);
+      border: 1px solid var(--accent-cyan);
+      padding: 3px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .grade-seal-badge {
+      font-size: 1.3rem;
+      font-weight: 900;
+      padding: 3px 14px;
+      border-radius: 8px;
+      letter-spacing: 1px;
     }
 
     .celebration-stars {
-      font-size: 2.5rem;
-      margin: 10px 0;
-      letter-spacing: 6px;
+      font-size: 2.2rem;
+      margin: 4px 0 6px 0;
+      letter-spacing: 4px;
     }
 
     .celebration-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 900;
       color: var(--text-main);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
+    }
+
+    .celebration-score-box {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 183, 3, 0.35);
+      border-radius: 12px;
+      padding: 10px;
+      margin: 10px 0;
+      position: relative;
+    }
+
+    .celebration-score-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .celebration-score-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--accent-gold);
+      font-family: monospace;
+      letter-spacing: 1px;
+      text-shadow: 0 0 20px rgba(255, 183, 3, 0.5);
+      margin: 2px 0;
+    }
+
+    .celebration-highscore-tag {
+      display: inline-block;
+      font-size: 0.70rem;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      padding: 2px 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+      animation: bounceRecord 0.6s infinite alternate;
+    }
+    @keyframes bounceRecord {
+      0% { transform: scale(0.95); }
+      100% { transform: scale(1.05); }
+    }
+
+    .celebration-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 10px 0 14px 0;
+    }
+
+    .c-stat-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .c-stat-lbl {
+      font-size: 0.64rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .c-stat-val {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
     }
 
     .celebration-subtitle {
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 20px;
+      line-height: 1.4;
+      margin-bottom: 16px;
     }
 
     .celebration-buttons {
@@ -2536,17 +2846,37 @@
               <p>Master authentic four-limb acoustic drumming from scratch — progressive curriculum, limb coordination, beat metronome strips & speed challenges.</p>
             </div>
             <div class="academy-stats-cluster">
+              <div class="career-score-pill" id="academy-career-display" title="Career Total Score across all mastered lessons">
+                <span>🏆</span> <span id="academy-career-score">0 PTS</span>
+              </div>
               <div class="rank-pill" id="academy-rank-display">
                 <span>🎖️</span> <span id="academy-rank-title">Rookie Drummer</span>
               </div>
+              <div class="academy-xp-box" id="academy-xp-box" title="Career XP and progress toward next drummer rank">
+                <div class="academy-xp-header">
+                  <span id="academy-xp-level">LVL 1</span>
+                  <span id="academy-xp-text">0 / 2,500 XP</span>
+                </div>
+                <div class="academy-xp-bar">
+                  <div class="academy-xp-fill" id="academy-xp-fill" style="width: 0%;"></div>
+                </div>
+              </div>
               <div class="stars-counter" id="academy-stars-display">
-                <span>⭐</span> <span id="academy-stars-count">0 / 30 Stars</span>
+                <span>⭐</span> <span id="academy-stars-count">0 / 48 Stars</span>
               </div>
             </div>
           </div>
 
           <!-- 1. Curriculum Grid Dashboard -->
           <div id="academy-curriculum-view">
+            <!-- Chapter Filter Tabs -->
+            <div class="academy-chapter-filters" id="academy-chapter-filters">
+              <button class="chapter-tab-btn active" data-chapter="all">🌟 All Lessons (16)</button>
+              <button class="chapter-tab-btn" data-chapter="1">1️⃣ Ch. 1: Foundations (1-4)</button>
+              <button class="chapter-tab-btn" data-chapter="2">2️⃣ Ch. 2: Essential Grooves (5-8)</button>
+              <button class="chapter-tab-btn" data-chapter="3">3️⃣ Ch. 3: Dynamics & Fills (9-12)</button>
+              <button class="chapter-tab-btn" data-chapter="4">4️⃣ Ch. 4: Master Stage (13-16)</button>
+            </div>
             <div class="curriculum-grid" id="academy-curriculum-grid">
               <!-- Dynamically rendered level cards -->
             </div>
@@ -2711,10 +3041,10 @@
                   <span><strong>O</strong> Dark Crash 18"</span>
                 </div>
                 <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
-                  <span><span style="color: var(--accent-gold); font-weight: bold;">Reach Down & Misc:</span></span>
-                  <span><strong>Z</strong> Brush Swirl</span>
+                  <span><span style="color: var(--accent-gold); font-weight: bold;">Percussion & Reaches:</span></span>
                   <span><strong>W</strong> Cowbell</span>
                   <span><strong>Q</strong> Tambourine</span>
+                  <span><strong>B / V / C</strong> Kick Alternate Keys</span>
                 </div>
               </div>
             </div>
@@ -2737,6 +3067,14 @@
                 <div class="hud-mini-stat">
                   <span class="hud-mini-label">Mode</span>
                   <span class="hud-mini-val" id="hud-academy-mode" style="color: var(--accent-gold);">IDLE</span>
+                </div>
+                <div class="hud-mini-stat">
+                  <span class="hud-mini-label">Score</span>
+                  <span class="hud-mini-val" id="hud-academy-score" style="color: var(--accent-gold); font-variant-numeric: tabular-nums;">0</span>
+                </div>
+                <div class="hud-mini-stat">
+                  <span class="hud-mini-label">Multiplier</span>
+                  <span class="hud-mini-val" id="hud-academy-mult" style="color: var(--accent-cyan); font-weight: 900;">1x</span>
                 </div>
                 <div class="hud-mini-stat">
                   <span class="hud-mini-label">Accuracy</span>
@@ -2977,7 +3315,7 @@
           • <strong>I</strong>: Fast Crash 16" (Right Middle ⇡)<br>
           • <strong>O</strong>: Dark Arena Crash 18" (Right Ring ⇡)<br>
           • <strong>W / Q</strong>: Cowbell / Tambourine (Left ⇡)<br>
-          • <strong>Z</strong>: Wire Brush Swirl (Left Pinky ⇣)<br>
+          • <strong>B / V / C</strong>: Alternative Kick Keys<br>
           • <strong>M</strong>: Toggle Metronome
         </div>
       </div>
@@ -2986,12 +3324,43 @@
 
   </div>
 
-  <!-- Academy Level Celebration Modal -->
+  <!-- Academy Level Celebration Modal (Arcade Results Screen) -->
   <div class="celebration-modal-overlay" id="academy-celebration-modal">
-    <div class="celebration-card">
-      <div style="font-size: 2.8rem; margin-bottom: 8px;">🎉 🤠 🥁</div>
+    <div class="celebration-card arcade-result-card">
+      <div class="celebration-header">
+        <span class="celebration-badge-level" id="celebration-level-badge">LEVEL 1</span>
+        <div class="grade-seal-badge grade-sss" id="celebration-grade-badge">SSS</div>
+      </div>
       <div class="celebration-stars" id="celebration-stars-display">⭐⭐⭐</div>
       <div class="celebration-title" id="celebration-title">Level Mastered!</div>
+      
+      <!-- Session Score & High Score Record -->
+      <div class="celebration-score-box">
+        <span class="celebration-score-label">SESSION SCORE</span>
+        <div class="celebration-score-number" id="celebration-score-display">0</div>
+        <div class="celebration-highscore-tag" id="celebration-highscore-tag" style="display: none;">🏆 NEW HIGH SCORE!</div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="celebration-stats-grid">
+        <div class="c-stat-box">
+          <span class="c-stat-lbl">Accuracy</span>
+          <span class="c-stat-val" id="celebration-accuracy-display" style="color: var(--accent-green);">100%</span>
+        </div>
+        <div class="c-stat-box">
+          <span class="c-stat-lbl">Max Combo</span>
+          <span class="c-stat-val" id="celebration-combo-display" style="color: var(--accent-cyan);">x32 🔥</span>
+        </div>
+        <div class="c-stat-box">
+          <span class="c-stat-lbl">XP Earned</span>
+          <span class="c-stat-val" id="celebration-xp-display" style="color: var(--accent-cyan);">+1,250 XP</span>
+        </div>
+        <div class="c-stat-box">
+          <span class="c-stat-lbl">Career Total</span>
+          <span class="c-stat-val" id="celebration-career-display" style="color: var(--accent-gold);">0 PTS</span>
+        </div>
+      </div>
+
       <div class="celebration-subtitle" id="celebration-desc">You nailed the groove with fantastic timing accuracy! Your four-limb coordination is sounding like an authentic Nashville studio drummer.</div>
       <div class="celebration-buttons">
         <button class="btn-lesson-action primary-practice" id="btn-celebration-replay">Practice Again</button>
@@ -3007,7 +3376,7 @@
       <div class="diploma-title">Master of Laptop Drumming</div>
       <div class="diploma-subtitle">Official Nashville Acoustic Certified</div>
       <div class="diploma-text">
-        Congratulations! You have completed all 10 progressive acoustic drum levels with world-class four-limb independence and timing accuracy. 
+        Congratulations! You have completed all 16 progressive acoustic drum levels across all 4 chapters with world-class four-limb independence, authentic groove pocket, and precision timing. 
         Your 10-finger typing mastery has officially transformed into <strong>professional acoustic drumming virtuosity</strong>!
       </div>
       <div style="font-size: 2.2rem; margin-bottom: 22px; letter-spacing: 6px;">⭐⭐⭐⭐⭐</div>
@@ -4968,12 +5337,18 @@
 
     // ==========================================
     // 7.5. NASHVILLE ACOUSTIC DRUM ACADEMY
-    // Progressive 10-Level Curriculum (Easy to Laptop Master)
-    // 10-Finger Touch Typing Synchronized
+    // 7.5. NASHVILLE ACOUSTIC DRUM ACADEMY (16-LEVEL ARCADE CURRICULUM)
+    // 4 Progressive Chapters • 10-Finger Touch Typing Synchronized
+    // 100% Ergonomic Home Row & Reaches • NO AWKWARD KEYS!
     // ==========================================
     const LESSONS_DATA = [
+      // -------------------------------------------------------------
+      // CHAPTER 1: THE FOUNDATIONS (Levels 1 - 4)
+      // -------------------------------------------------------------
       {
         id: 1,
+        chapter: 1,
+        chapterName: 'Ch. 1: Foundations',
         title: 'Ground Zero - The Bass Drum Pulse',
         subtitle: 'Foundation Pulse on Beats 1 & 3',
         concept: 'The absolute beginning of drumming. Rest your thumbs on the Spacebar and lock in the foundational heartbeat pulse.',
@@ -4992,6 +5367,8 @@
       },
       {
         id: 2,
+        chapter: 1,
+        chapterName: 'Ch. 1: Foundations',
         title: 'The Two-Limb Backbeat Foundation',
         subtitle: 'Kick on 1 & 3, Snare on 2 & 4',
         concept: 'The bedrock of modern drumming! Combine thumb pulse on SPACE with crisp left-index snaps on the F key (home nub ⦿).',
@@ -5011,6 +5388,8 @@
       },
       {
         id: 3,
+        chapter: 1,
+        chapterName: 'Ch. 1: Foundations',
         title: 'Three-Limb Clockwork (Hi-Hat 8ths)',
         subtitle: 'Right Hand Steady 8ths + Solid Backbeat',
         concept: 'Limb independence starts here! Your right index finger on J (home nub ⦿) ticks continuous 8th notes while foot and snare drive the groove.',
@@ -5035,6 +5414,8 @@
       },
       {
         id: 4,
+        chapter: 1,
+        chapterName: 'Ch. 1: Foundations',
         title: 'Hi-Hat Sizzle & Choke (Open Hat)',
         subtitle: 'Upbeat Sizzle on K into Beat 1 Choke',
         concept: 'Country-rock sizzle! Lift your right middle finger onto K to open the hi-hat on the upbeat before beat 1, then choke it shut on beat 1.',
@@ -5057,8 +5438,14 @@
           ['hatOpen'],           []
         ]
       },
+
+      // -------------------------------------------------------------
+      // CHAPTER 2: ESSENTIAL GROOVES (Levels 5 - 8)
+      // -------------------------------------------------------------
       {
         id: 5,
+        chapter: 2,
+        chapterName: 'Ch. 2: Essential Grooves',
         title: 'Nashville Ballad & Cross-Stick',
         subtitle: 'Woody Rim Clicks (S) & Syncopated Kick',
         concept: 'The quintessential acoustic country ballad groove. Lay the drumstick flat across the rim with Left Ring finger on S for warm woody intimacy.',
@@ -5083,6 +5470,34 @@
       },
       {
         id: 6,
+        chapter: 2,
+        chapterName: 'Ch. 2: Essential Grooves',
+        title: 'Four-on-the-Floor Disco & Dance',
+        subtitle: 'Continuous Driving Kick on 1, 2, 3, 4',
+        concept: 'The driving heartbeat of dance halls and modern country-pop! Kick on every quarter note (1, 2, 3, 4), snare on 2 & 4, and steady 8th-note hi-hats.',
+        limbs: [
+          { type: 'foot-r', text: '👍 Thumbs: 4-on-the-Floor Kick (SPACE)' },
+          { type: 'hand-l', text: '✋ Left Index: Snare (F)' },
+          { type: 'hand-r', text: '✋ Right Index: Closed Hat (J)' }
+        ],
+        tempo: 100,
+        tipTitle: 'Locked Quarter-Pulse',
+        tipDesc: 'Keep your thumbs pulsing steadily like a clockwork locomotive on every quarter note. The snare snaps on beats 2 and 4 to elevate the momentum!',
+        pattern: [
+          ['kick', 'hatClosed'],         [],
+          ['hatClosed'],                 [],
+          ['kick', 'snare', 'hatClosed'],[],
+          ['hatClosed'],                 [],
+          ['kick', 'hatClosed'],         [],
+          ['hatClosed'],                 [],
+          ['kick', 'snare', 'hatClosed'],[],
+          ['hatClosed'],                 []
+        ]
+      },
+      {
+        id: 7,
+        chapter: 2,
+        chapterName: 'Ch. 2: Essential Grooves',
         title: 'Driving Chorus: Sabian Ride & Bell Accents',
         subtitle: 'Ride Bow (L) & Piercing Bell (;) Accents',
         concept: 'Elevate into the stadium chorus! Move your right hand from hi-hat over to the 22" Ride Cymbal bow (L) and ping the heavy bell (;) on key downbeats.',
@@ -5106,7 +5521,39 @@
         ]
       },
       {
-        id: 7,
+        id: 8,
+        chapter: 2,
+        chapterName: 'Ch. 2: Essential Grooves',
+        title: 'Rock Rimshot Power Groove',
+        subtitle: 'Heavy Rimshot Snaps (D) with Driving 8ths',
+        concept: 'Pure acoustic rock energy! Strike the rimshot on D with your left middle finger for explosive snare cracks on 2 and 4, paired with syncopated kick punches.',
+        limbs: [
+          { type: 'hand-l', text: '✋ Left Middle: Snare Rimshot (D)' },
+          { type: 'hand-r', text: '✋ Right Index: Closed Hat (J)' },
+          { type: 'foot-r', text: '👍 Thumbs: Kick (SPACE)' }
+        ],
+        tempo: 90,
+        tipTitle: 'Rimshot Power Dynamics',
+        tipDesc: 'Your middle finger hits D for an authentic rimshot crack that cuts hard! The kick syncopates into beat 3 for high-octane rock propulsion.',
+        pattern: [
+          ['kick', 'hatClosed'],         [],
+          ['hatClosed'],                 [],
+          ['snareRimshot', 'hatClosed'], [],
+          ['hatClosed'],                 [],
+          ['kick', 'hatClosed'],         [],
+          ['kick', 'hatClosed'],         [],
+          ['snareRimshot', 'hatClosed'], [],
+          ['hatClosed'],                 []
+        ]
+      },
+
+      // -------------------------------------------------------------
+      // CHAPTER 3: DYNAMICS & FILLS (Levels 9 - 12)
+      // -------------------------------------------------------------
+      {
+        id: 9,
+        chapter: 3,
+        chapterName: 'Ch. 3: Dynamics & Fills',
         title: 'Four-Way Coordination: Left-Foot Pedal Hat',
         subtitle: 'Left Pinky Pedal Chick (A) on 2 & 4',
         concept: 'True four-limb acoustic mastery! While both hands ride and snare and your thumb kicks, your left pinky on A pumps the pedal hat on 2 and 4.',
@@ -5131,39 +5578,9 @@
         ]
       },
       {
-        id: 8,
-        title: 'The Tennessee Train Beat (Locomotive)',
-        subtitle: 'Johnny Cash 16th Brush Swirls & Rimshots',
-        concept: 'The galloping locomotive rhythm of Nashville honky-tonks! Rapid 16th-note brush ghost notes (Z) with cracking rimshot accents on D.',
-        limbs: [
-          { type: 'hand-l', text: '✋ Left Pinky: Brush Swirl (Z)' },
-          { type: 'hand-l', text: '✋ Left Middle: Rimshot Accents (D)' },
-          { type: 'foot-r', text: '👍 Thumbs: Kick (SPACE)' }
-        ],
-        tempo: 104,
-        tipTitle: 'Ghost Note Dynamics',
-        tipDesc: 'Keep the brush ghost notes on Z whisper-light like a steam engine ("chugga-chugga"), then whip D hard with your middle finger on 2 and 4!',
-        pattern: [
-          ['kick', 'snareBrush'],
-          ['snareBrush'],
-          ['snareBrush'],
-          ['snareBrush'],
-          ['snareRimshot', 'kick'],
-          ['snareBrush'],
-          ['snareBrush'],
-          ['snareBrush'],
-          ['kick', 'snareBrush'],
-          ['snareBrush'],
-          ['snareBrush'],
-          ['snareBrush'],
-          ['snareRimshot', 'kick'],
-          ['snareBrush'],
-          ['snareBrush'],
-          ['snareBrush']
-        ]
-      },
-      {
-        id: 9,
+        id: 10,
+        chapter: 3,
+        chapterName: 'Ch. 3: Dynamics & Fills',
         title: 'Descending Tom Roll Fill into 18" Crash',
         subtitle: 'High (E) ➔ Mid (R) ➔ Floor (U) ➔ Crash (O)',
         concept: 'Dynamic kit movement and fill landing! Flow down the acoustic tom-toms and crash explosively on beat 1 paired with a heavy bass drum hit.',
@@ -5195,10 +5612,68 @@
         ]
       },
       {
-        id: 10,
-        title: 'Texas Half-Time Shuffle & Arena Finale',
-        subtitle: 'The Supreme Test of Laptop Drumming Mastery',
-        concept: 'The ultimate summit of acoustic drum groove! Heavy half-time backbeat on 3, syncopated kick pushes, ride bell pings, and complete 4-way pocket.',
+        id: 11,
+        chapter: 3,
+        chapterName: 'Ch. 3: Dynamics & Fills',
+        title: 'Motown Stomp & Handclap Pocket',
+        subtitle: 'Syncopated Upbeat Kicks & Snappy Rimshots',
+        concept: 'The iconic Detroit / Nashville soul bounce! Syncopated kick accents on steps 0, 6, and 8 make the room shake while sharp rimshots crack on 2 & 4.',
+        limbs: [
+          { type: 'foot-r', text: '👍 Thumbs: Syncopated Kicks (SPACE)' },
+          { type: 'hand-l', text: '✋ Left Middle: Rimshot (D)' },
+          { type: 'hand-r', text: '✋ Right Index: Closed Hat (J)' }
+        ],
+        tempo: 104,
+        tipTitle: 'Soul Bounce Pocket',
+        tipDesc: 'Notice the kick hit on step 6 right before beat 3 downbeat! That anticipatory push is the magic secret behind classic Motown bounce.',
+        pattern: [
+          ['kick', 'hatClosed'],         [],
+          ['hatClosed'],                 [],
+          ['snareRimshot', 'hatClosed'], [],
+          ['kick', 'hatClosed'],         [],
+          ['kick', 'hatClosed'],         [],
+          ['hatClosed'],                 [],
+          ['snareRimshot', 'hatClosed'], [],
+          ['hatClosed'],                 []
+        ]
+      },
+      {
+        id: 12,
+        chapter: 3,
+        chapterName: 'Ch. 3: Dynamics & Fills',
+        title: 'Funk Pocket & Dynamic Ghost Notes',
+        subtitle: 'Whisper Snare (F) into Cracking Accents (D)',
+        concept: 'Dynamic contrast separates good drummers from great ones! Play subtle center snare taps on F on offbeats, then drop hammer rimshots on D on 2 and 4.',
+        limbs: [
+          { type: 'hand-l', text: '✋ Left Index: Snare (F) & Middle: Rimshot (D)' },
+          { type: 'hand-r', text: '✋ Right Index: Closed Hat (J)' },
+          { type: 'foot-r', text: '👍 Thumbs: Kick (SPACE)' }
+        ],
+        tempo: 90,
+        tipTitle: 'Finger Alternation Mastery',
+        tipDesc: 'Alternating between index (F) and middle (D) on your left hand gives you studio-grade funk ghost note phrasing with effortless fluidity.',
+        pattern: [
+          ['kick', 'hatClosed'],         [],
+          ['hatClosed'],                 [],
+          ['snareRimshot', 'hatClosed'], [],
+          ['snare', 'hatClosed'],        [],
+          ['kick', 'hatClosed'],         [],
+          ['kick', 'hatClosed'],         [],
+          ['snareRimshot', 'hatClosed'], [],
+          ['snare', 'hatClosed'],        []
+        ]
+      },
+
+      // -------------------------------------------------------------
+      // CHAPTER 4: MASTER STAGE (Levels 13 - 16)
+      // -------------------------------------------------------------
+      {
+        id: 13,
+        chapter: 4,
+        chapterName: 'Ch. 4: Master Stage',
+        title: 'Texas Half-Time Shuffle',
+        subtitle: 'Massive Half-Time Snare on 3 & Bell Pings',
+        concept: 'The ultimate blues-rock groove pocket! The backbeat drops on beat 3 with a thunderous Rimshot (D), while your right hand pings the Ride Bell (;).',
         limbs: [
           { type: 'foot-r', text: '👍 Thumbs: Syncopated Kick' },
           { type: 'hand-l', text: '✋ Left Middle: Massive Rimshot on 3 (D)' },
@@ -5209,33 +5684,110 @@
         tipTitle: 'Mastery Pocket',
         tipDesc: 'Playing half-time means the main snare backbeat drops on beat 3. Lean back, breathe with the tempo, and let your 10-finger muscle memory rule the stage!',
         pattern: [
-          ['kick', 'rideBell'],
-          [],
-          ['rideBow'],
-          [],
-          ['hatPedal', 'rideBow'],
-          [],
-          ['kick', 'rideBow'],
-          [],
-          ['snareRimshot', 'rideBell'],
-          [],
-          ['kick', 'rideBow'],
-          [],
-          ['hatPedal', 'rideBow'],
-          [],
-          ['kick', 'rideBow'],
-          []
+          ['kick', 'rideBell'],         [],
+          ['rideBow'],                  [],
+          ['hatPedal', 'rideBow'],      [],
+          ['kick', 'rideBow'],          [],
+          ['snareRimshot', 'rideBell'], [],
+          ['kick', 'rideBow'],          [],
+          ['hatPedal', 'rideBow'],      [],
+          ['kick', 'rideBow'],          []
+        ]
+      },
+      {
+        id: 14,
+        chapter: 4,
+        chapterName: 'Ch. 4: Master Stage',
+        title: 'Rapid Thumb Kick Drive',
+        subtitle: 'High-Speed Double-Thump Kick Endurance',
+        concept: 'Rapid-fire kick drum control! Double kick hits on 1, 1& and 3, 3& demand lightning thumb agility while keeping a steady ride cymbal wash.',
+        limbs: [
+          { type: 'foot-r', text: '👍 Thumbs: Rapid Double Kicks (SPACE)' },
+          { type: 'hand-r', text: '✋ Right Ring: Ride Bow (L)' },
+          { type: 'hand-l', text: '✋ Left Index: Snare (F)' }
+        ],
+        tempo: 108,
+        tipTitle: 'Thumb Rebound Control',
+        tipDesc: 'Tap Space lightly like a drum pedal spring rebound. Let your thumbs alternate or double-tap with relaxed wrists at 108 BPM.',
+        pattern: [
+          ['kick', 'rideBow'],  [],
+          ['kick', 'rideBow'],  [],
+          ['snare', 'rideBow'], [],
+          ['rideBow'],          [],
+          ['kick', 'rideBow'],  [],
+          ['kick', 'rideBow'],  [],
+          ['snare', 'rideBow'], [],
+          ['rideBow'],          []
+        ]
+      },
+      {
+        id: 15,
+        chapter: 4,
+        chapterName: 'Ch. 4: Master Stage',
+        title: 'Latin Bossa-Rock Fusion',
+        subtitle: 'Cross-Stick (S), Ride Bell (;), and Pedal Hat (A)',
+        concept: 'Sophisticated cross-stick syncopation paired with a steady quarter-note ride bell ping and steady pedal hat pump on 2 & 4.',
+        limbs: [
+          { type: 'hand-l', text: '✋ Left Ring: Cross-Stick (S)' },
+          { type: 'hand-r', text: '✋ Right Pinky: Ride Bell (;)' },
+          { type: 'foot-l', text: '🦶 Left Pinky: Pedal Hat (A)' },
+          { type: 'foot-r', text: '👍 Thumbs: Kick (SPACE)' }
+        ],
+        tempo: 102,
+        tipTitle: 'Cross-Rhythm Independence',
+        tipDesc: 'The bell keeps time on ; while your left hand dances on S across the syncopated pattern. Truly mesmerizing Latin-country fusion!',
+        pattern: [
+          ['kick', 'rideBell', 'snareCross'], [],
+          ['rideBell'],                       [],
+          ['hatPedal', 'rideBell'],           [],
+          ['snareCross', 'rideBell'],         [],
+          ['kick', 'rideBell'],               [],
+          ['snareCross', 'rideBell'],         [],
+          ['hatPedal', 'rideBell', 'kick'],   [],
+          ['rideBell', 'snareCross'],         []
+        ]
+      },
+      {
+        id: 16,
+        chapter: 4,
+        chapterName: 'Ch. 4: Master Stage',
+        title: 'Grand Ole Opry Stadium Finale',
+        subtitle: 'The Supreme Summit: 4-Limb Arena Mastery',
+        concept: 'The ultimate graduation trial! Full kit coordination combining arena crashes (I & O), thunderous rimshots (D), tom fills, ride bell pings, and syncopated kicks.',
+        limbs: [
+          { type: 'hand-r', text: '✋ Right Hand: Crashes (I/O) & Ride (;)' },
+          { type: 'hand-l', text: '✋ Left Hand: Rimshot (D) & Toms' },
+          { type: 'foot-r', text: '👍 Thumbs: Kick (SPACE)' },
+          { type: 'foot-l', text: '🦶 Left Pinky: Pedal Hat (A)' }
+        ],
+        tempo: 114,
+        tipTitle: 'Arena Champion',
+        tipDesc: 'This is the graduation master exam. Breathe, relax your shoulders, and let all 10 fingers unleash pure acoustic stadium magic!',
+        pattern: [
+          ['kick', 'crashRight'],                [],
+          ['rideBow'],                           [],
+          ['snareRimshot', 'hatPedal', 'rideBow'], [],
+          ['kick', 'rideBow'],                   [],
+          ['kick', 'rideBell'],                  [],
+          ['tomHigh'],                           ['tomMid'],
+          ['snareRimshot', 'tomFloor'],          [],
+          ['crashLeft', 'kick'],                 []
         ]
       }
     ];
 
     let academyProgress = {
       unlockedLevels: [1],
-      levelStars: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0 }
+      levelStars: {},
+      levelHighScores: {},
+      levelGrades: {},
+      totalXp: 0
     };
     let activeLesson = null;
     let academyRoutineActive = false;
     let academyTimerId = null;
+    let currentChapterFilter = 'all';
+
     let academyState = {
       mode: 'idle',
       currentStep: 0,
@@ -5245,16 +5797,91 @@
       correctHits: 0,
       combo: 0,
       maxCombo: 0,
+      score: 0,
       stepHitRegistered: {}
     };
 
+    const DRUMMER_RANKS = [
+      { minXp: 0, title: 'Rookie Drummer 🌱', level: 1 },
+      { minXp: 2500, title: 'Garage Jammer 🥁', level: 2 },
+      { minXp: 6000, title: 'Honky-Tonk Regular 🎸', level: 3 },
+      { minXp: 12000, title: 'Roadhouse Veteran 🤠', level: 4 },
+      { minXp: 20000, title: 'Groove Master 🔥', level: 5 },
+      { minXp: 32000, title: 'Grand Ole Opry Star 🌟', level: 6 },
+      { minXp: 48000, title: 'Nashville Studio Legend 🎙️', level: 7 },
+      { minXp: 70000, title: 'Master of Laptop Drumming 🏆', level: 8 }
+    ];
+
+    function getRankInfo(xp) {
+      let currentRank = DRUMMER_RANKS[0];
+      let nextRank = DRUMMER_RANKS[1];
+
+      for (let i = DRUMMER_RANKS.length - 1; i >= 0; i--) {
+        if (xp >= DRUMMER_RANKS[i].minXp) {
+          currentRank = DRUMMER_RANKS[i];
+          nextRank = DRUMMER_RANKS[i + 1] || null;
+          break;
+        }
+      }
+
+      const min = currentRank.minXp;
+      const max = nextRank ? nextRank.minXp : currentRank.minXp * 1.5;
+      const pct = nextRank ? Math.min(100, Math.max(0, Math.round(((xp - min) / (max - min)) * 100))) : 100;
+
+      return {
+        title: currentRank.title,
+        level: currentRank.level,
+        currentXp: xp,
+        nextXp: max,
+        progressPct: pct
+      };
+    }
+
+    function getTotalCareerScore() {
+      let sum = 0;
+      if (academyProgress.levelHighScores) {
+        for (const id in academyProgress.levelHighScores) {
+          sum += (academyProgress.levelHighScores[id] || 0);
+        }
+      }
+      return sum;
+    }
+
+    function getTotalStars() {
+      let sum = 0;
+      for (let i = 1; i <= 16; i++) {
+        sum += (academyProgress.levelStars[i] || 0);
+      }
+      return sum;
+    }
+
     function loadAcademyProgress() {
       try {
-        const saved = localStorage.getItem('nashville_drum_academy_v2');
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          if (parsed.unlockedLevels && parsed.levelStars) {
-            academyProgress = parsed;
+        const savedV3 = localStorage.getItem('nashville_drum_academy_v3');
+        if (savedV3) {
+          const parsed = JSON.parse(savedV3);
+          if (parsed && Array.isArray(parsed.unlockedLevels)) {
+            academyProgress = Object.assign(academyProgress, parsed);
+            return;
+          }
+        }
+        // Backward-compatible migration from v2
+        const savedV2 = localStorage.getItem('nashville_drum_academy_v2');
+        if (savedV2) {
+          const parsedV2 = JSON.parse(savedV2);
+          if (parsedV2 && parsedV2.unlockedLevels) {
+            academyProgress.unlockedLevels = parsedV2.unlockedLevels;
+            academyProgress.levelStars = parsedV2.levelStars || {};
+            for (let i = 1; i <= 16; i++) {
+              const s = academyProgress.levelStars[i] || 0;
+              if (s > 0) {
+                const baseScore = s * 6500;
+                academyProgress.levelHighScores[i] = baseScore;
+                academyProgress.levelGrades[i] = s === 3 ? 'SSS' : (s === 2 ? 'S' : 'A');
+                academyProgress.totalXp += (baseScore / 10 + s * 300);
+              }
+            }
+            saveAcademyProgress();
           }
         }
       } catch (e) {}
@@ -5262,41 +5889,48 @@
 
     function saveAcademyProgress() {
       try {
-        localStorage.setItem('nashville_drum_academy_v2', JSON.stringify(academyProgress));
+        localStorage.setItem('nashville_drum_academy_v3', JSON.stringify(academyProgress));
       } catch (e) {}
-    }
-
-    function getTotalStars() {
-      let sum = 0;
-      for (let i = 1; i <= 10; i++) {
-        sum += (academyProgress.levelStars[i] || 0);
-      }
-      return sum;
-    }
-
-    function getPlayerRankTitle(stars) {
-      if (stars >= 28) return 'Master of Laptop Drumming 🏆';
-      if (stars >= 24) return 'Nashville Studio Legend 🎙️';
-      if (stars >= 19) return 'Grand Ole Opry Star 🌟';
-      if (stars >= 14) return 'Roadhouse Veteran 🤠';
-      if (stars >= 8)  return 'Honky-Tonk Regular 🎸';
-      if (stars >= 3)  return 'Garage Jammer 🥁';
-      return 'Rookie Drummer 🌱';
     }
 
     function updateAcademyHeaderStats() {
       const stars = getTotalStars();
-      const rank = getPlayerRankTitle(stars);
+      const totalScore = getTotalCareerScore();
+      const xp = academyProgress.totalXp || 0;
+      const rankInfo = getRankInfo(xp);
+
       const rankElem = document.getElementById('academy-rank-title');
       const starsElem = document.getElementById('academy-stars-count');
-      if (rankElem) rankElem.textContent = rank;
-      if (starsElem) starsElem.textContent = `${stars} / 30 Stars`;
+      const scoreElem = document.getElementById('academy-career-score');
+      const xpLvlElem = document.getElementById('academy-xp-level');
+      const xpTxtElem = document.getElementById('academy-xp-text');
+      const xpFillElem = document.getElementById('academy-xp-fill');
+
+      if (rankElem) rankElem.textContent = rankInfo.title;
+      if (starsElem) starsElem.textContent = `${stars} / 48 Stars`;
+      if (scoreElem) scoreElem.textContent = `${totalScore.toLocaleString()} PTS`;
+      if (xpLvlElem) xpLvlElem.textContent = `LVL ${rankInfo.level}`;
+      if (xpTxtElem) xpTxtElem.textContent = `${xp.toLocaleString()} / ${rankInfo.nextXp.toLocaleString()} XP`;
+      if (xpFillElem) xpFillElem.style.width = `${rankInfo.progressPct}%`;
+    }
+
+    function setupChapterFilterTabs() {
+      const tabs = document.querySelectorAll('.chapter-tab-btn');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentChapterFilter = tab.getAttribute('data-chapter') || 'all';
+          renderCurriculumGrid();
+        });
+      });
     }
 
     function initAcademyUI() {
       document.body.classList.remove('in-active-lesson');
       loadAcademyProgress();
       renderCurriculumGrid();
+      setupChapterFilterTabs();
       const curriculumView = document.getElementById('academy-curriculum-view');
       const lessonView = document.getElementById('academy-lesson-view');
       const headerCard = document.querySelector('.academy-header-card');
@@ -5312,13 +5946,35 @@
       updateAcademyHeaderStats();
       grid.innerHTML = '';
 
-      LESSONS_DATA.forEach(lesson => {
+      // Find the primary next-up level to highlight
+      let nextUpLevelId = null;
+      for (let i = 1; i <= 16; i++) {
+        if (academyProgress.unlockedLevels.includes(i)) {
+          if ((academyProgress.levelStars[i] || 0) < 3) {
+            nextUpLevelId = i;
+            break;
+          }
+        }
+      }
+      if (!nextUpLevelId) {
+        nextUpLevelId = Math.max(...academyProgress.unlockedLevels);
+      }
+
+      const filteredLessons = LESSONS_DATA.filter(lesson => {
+        if (currentChapterFilter === 'all') return true;
+        return lesson.chapter.toString() === currentChapterFilter;
+      });
+
+      filteredLessons.forEach(lesson => {
         const isUnlocked = academyProgress.unlockedLevels.includes(lesson.id);
         const starsCount = academyProgress.levelStars[lesson.id] || 0;
         const isCompleted = starsCount > 0;
+        const isNextUp = (lesson.id === nextUpLevelId && isUnlocked);
+        const highScore = academyProgress.levelHighScores[lesson.id] || 0;
+        const grade = academyProgress.levelGrades[lesson.id] || (isCompleted ? 'A' : '--');
 
         const card = document.createElement('div');
-        card.className = `level-card ${isUnlocked ? '' : 'locked'} ${isCompleted ? 'completed' : ''}`;
+        card.className = `level-card ${isUnlocked ? '' : 'locked'} ${isCompleted ? 'completed' : ''} ${isNextUp ? 'next-unlocked' : ''}`;
 
         let starsHtml = '';
         for (let s = 1; s <= 3; s++) {
@@ -5332,16 +5988,21 @@
 
         card.innerHTML = `
           <div class="level-top-row">
+            <span class="card-chapter-pill">${lesson.chapterName}</span>
             <span class="level-badge">${isCompleted ? 'COMPLETED' : `LEVEL ${lesson.id}`}</span>
             <div class="stars-row">${starsHtml}</div>
           </div>
           <div class="level-title">${lesson.id}. ${lesson.title}</div>
           <div class="level-concept">${lesson.concept}</div>
+          <div class="card-score-row">
+            <span class="card-highscore">Best: <strong>${highScore > 0 ? highScore.toLocaleString() : '--'}</strong> pts</span>
+            ${highScore > 0 ? `<span class="card-grade-badge grade-${grade.toLowerCase()}">${grade}</span>` : '<span style="color: #64748b; font-size: 0.68rem;">Not played</span>'}
+          </div>
           <div class="limbs-tag-row">${limbsHtml}</div>
           <div class="level-footer-row">
             <span class="tempo-tag">Tempo: ${lesson.tempo} BPM</span>
             <button class="btn-start-level" ${isUnlocked ? '' : 'disabled style="opacity: 0.5;"'}>
-              ${!isUnlocked ? '🔒 Locked' : (isCompleted ? 'Replay ➔' : 'Start Lesson ➔')}
+              ${!isUnlocked ? '🔒 Locked' : (isCompleted ? 'Replay ➔' : (isNextUp ? '⚡ Play Next ➔' : 'Start Lesson ➔'))}
             </button>
           </div>
         `;
@@ -5525,16 +6186,67 @@
       }
     }
 
-    function updateAcademyHUD(mode, acc, combo, measure) {
+    function updateAcademyHUD(mode, acc, combo, measure, score, mult) {
       const modeElem = document.getElementById('hud-academy-mode');
       const accElem = document.getElementById('hud-academy-acc');
       const comboElem = document.getElementById('hud-academy-combo');
       const measureElem = document.getElementById('hud-academy-measure');
+      const scoreElem = document.getElementById('hud-academy-score');
+      const multElem = document.getElementById('hud-academy-mult');
 
       if (modeElem) modeElem.textContent = mode;
       if (accElem) accElem.textContent = acc;
-      if (comboElem) comboElem.textContent = `x${combo}`;
+      if (comboElem) {
+        comboElem.textContent = `x${combo}`;
+        if (combo >= 10) {
+          comboElem.classList.add('hud-combo-fire');
+        } else {
+          comboElem.classList.remove('hud-combo-fire');
+        }
+      }
       if (measureElem) measureElem.textContent = measure;
+      if (scoreElem) {
+        const displayScore = (score !== undefined) ? score : (academyState.score || 0);
+        scoreElem.textContent = Math.round(displayScore).toLocaleString();
+      }
+      if (multElem) {
+        const displayMult = (mult !== undefined) ? mult : 1;
+        multElem.textContent = `${displayMult}x`;
+      }
+    }
+
+    function playComboFanfare() {
+      if (!audioCtx) return;
+      try {
+        const t = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(587.33, t); // D5
+        osc.frequency.exponentialRampToValueAtTime(880, t + 0.12); // A5
+        gain.gain.setValueAtTime(0.22, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.2);
+        osc.connect(gain);
+        gain.connect(masterGainNode);
+        osc.start(t);
+        osc.stop(t + 0.22);
+      } catch(e) {}
+    }
+
+    function spawnArcadeHitPopup(stepIndex, text, multiplier) {
+      const stepElem = document.getElementById(`academy-step-${stepIndex}`);
+      if (!stepElem) return;
+
+      const popup = document.createElement('div');
+      popup.className = 'arcade-hit-float';
+      popup.textContent = `${text} ${multiplier > 1 ? `[${multiplier}x]` : ''}`;
+      popup.style.color = multiplier >= 3 ? '#ff5722' : (multiplier === 2 ? 'var(--accent-gold)' : 'var(--accent-cyan)');
+      popup.style.left = '50%';
+      popup.style.top = '-12px';
+      stepElem.appendChild(popup);
+      setTimeout(() => {
+        if (popup.parentNode) popup.parentNode.removeChild(popup);
+      }, 650);
     }
 
     // Dynamic Pace Control Functions
@@ -5664,9 +6376,10 @@
         academyState.correctHits = 0;
         academyState.combo = 0;
         academyState.maxCombo = 0;
+        academyState.score = 0;
         academyState.totalExpectedHits = 0;
         academyState.stepHitRegistered = {};
-        updateAcademyHUD('PRACTICE', '100%', 0, '1 / 4');
+        updateAcademyHUD('PRACTICE', '100%', 0, '1 / 4', 0, 1);
         runAcademyStepLoop();
       });
     }
@@ -5685,9 +6398,10 @@
         academyState.correctHits = 0;
         academyState.combo = 0;
         academyState.maxCombo = 0;
+        academyState.score = 0;
         academyState.totalExpectedHits = 0;
         academyState.stepHitRegistered = {};
-        updateAcademyHUD('LADDER 1/3', '100%', 0, '1 / 2');
+        updateAcademyHUD('LADDER 1/3', '100%', 0, '1 / 2', 0, 1);
         runAcademyStepLoop();
       });
     }
@@ -5803,11 +6517,18 @@
           modeDisplay = `LADDER ${academyState.ladderStage || 1}/3`;
         }
 
+        let mult = 1;
+        if (academyState.combo >= 30) mult = 4;
+        else if (academyState.combo >= 20) mult = 3;
+        else if (academyState.combo >= 10) mult = 2;
+
         updateAcademyHUD(
           modeDisplay,
           academyState.mode === 'demo' ? '100%' : `${accPercent}%`,
           academyState.combo,
-          `${Math.min(totalBars, currentBar)} / ${totalBars}`
+          `${Math.min(totalBars, currentBar)} / ${totalBars}`,
+          academyState.score,
+          mult
         );
 
         academyState.currentStep++;
@@ -5840,6 +6561,14 @@
           academyState.maxCombo = academyState.combo;
         }
 
+        let mult = 1;
+        if (academyState.combo >= 30) mult = 4;
+        else if (academyState.combo >= 20) mult = 3;
+        else if (academyState.combo >= 10) mult = 2;
+
+        const pointsAdded = 300 * mult;
+        academyState.score = (academyState.score || 0) + pointsAdded;
+
         // Flash green hit success glow on keycap!
         const info = DRUM_KEY_INFO[drumType];
         if (info) {
@@ -5850,12 +6579,20 @@
           }
         }
 
-        // Floating judgment feedback
+        // Floating arcade score popup over the active step
+        spawnArcadeHitPopup(stepInBar, `+${pointsAdded}`, mult);
+
+        // Sound cue on milestone combo (10, 20, 30)
+        if (academyState.combo === 10 || academyState.combo === 20 || academyState.combo === 30) {
+          playComboFanfare();
+        }
+
         const infoBadge = DRUM_KEY_INFO[drumType];
         const keyName = infoBadge ? infoBadge.key : drumType;
+        const streakLabel = mult > 1 ? `Streak: x${academyState.combo} [${mult}x MULTIPLIER! 🔥]` : `Streak: x${academyState.combo}`;
         setCoachPrompter(
           'success',
-          `✨ <strong>PERFECT!</strong> [ ${keyName} ] &nbsp;|&nbsp; Streak: x${academyState.combo} &nbsp;|&nbsp; Accuracy: ${Math.round((academyState.correctHits / academyState.totalExpectedHits) * 100)}%`,
+          `✨ <strong>PERFECT!</strong> [ ${keyName} ] &nbsp;|&nbsp; ${streakLabel} &nbsp;|&nbsp; Score: ${academyState.score.toLocaleString()}`,
           infoBadge ? { key: infoBadge.key, finger: '✨ PERFECT' } : null
         );
 
@@ -5872,7 +6609,9 @@
           modeDisplay,
           `${Math.min(100, acc)}%`,
           academyState.combo,
-          `${Math.floor((academyState.currentStep - 1) / 16) + 1} / ${academyState.mode === 'ladder' ? 2 : 4}`
+          `${Math.floor((academyState.currentStep - 1) / 16) + 1} / ${academyState.mode === 'ladder' ? 2 : 4}`,
+          academyState.score,
+          mult
         );
       }
     }
@@ -5893,7 +6632,7 @@
       const stopBtn = document.getElementById('btn-lesson-stop');
       if (stopBtn) stopBtn.style.display = 'none';
       academyState.mode = 'idle';
-      updateAcademyHUD('IDLE', '--%', 0, '0 / 4');
+      updateAcademyHUD('IDLE', '--%', 0, '0 / 4', academyState.score || 0, 1);
 
       if (activeLesson) {
         setCoachPrompter(
@@ -5911,6 +6650,7 @@
         ? Math.round((academyState.correctHits / academyState.totalExpectedHits) * 100)
         : 100;
       const finalCombo = academyState.maxCombo;
+      const finalScore = academyState.score || 0;
 
       // Handle Speed Ladder stages
       if (mode === 'ladder') {
@@ -5923,7 +6663,7 @@
             setPacePresetButtonsActive('0.75');
             setCoachPrompter(
               'success',
-              `🔥 <strong>STAGE 1 PASSED (${finalAccuracy}%)!</strong> Leveling up to 75% Speed... Get ready!`,
+              `🔥 <strong>STAGE 1 PASSED (${finalAccuracy}%)!</strong> Leveling up to 75% Speed... Score: ${finalScore.toLocaleString()}!`,
               null
             );
             triggerCelebrationFanfare();
@@ -5937,7 +6677,7 @@
                   academyState.maxCombo = 0;
                   academyState.totalExpectedHits = 0;
                   academyState.stepHitRegistered = {};
-                  updateAcademyHUD('LADDER 2/3', '100%', 0, '1 / 2');
+                  updateAcademyHUD('LADDER 2/3', '100%', 0, '1 / 2', academyState.score, 1);
                   runAcademyStepLoop();
                 });
               }
@@ -5965,7 +6705,7 @@
                   academyState.maxCombo = 0;
                   academyState.totalExpectedHits = 0;
                   academyState.stepHitRegistered = {};
-                  updateAcademyHUD('LADDER 3/3', '100%', 0, '1 / 2');
+                  updateAcademyHUD('LADDER 3/3', '100%', 0, '1 / 2', academyState.score, 1);
                   runAcademyStepLoop();
                 });
               }
@@ -5986,6 +6726,28 @@
         return;
       }
 
+      // Grade determination
+      let grade = 'C';
+      if (finalAccuracy >= 98 && finalCombo >= Math.round(academyState.totalExpectedHits * 0.85)) {
+        grade = 'SSS';
+      } else if (finalAccuracy >= 93) {
+        grade = 'SS';
+      } else if (finalAccuracy >= 85) {
+        grade = 'S';
+      } else if (finalAccuracy >= 75) {
+        grade = 'A';
+      } else if (finalAccuracy >= 60) {
+        grade = 'B';
+      }
+
+      // High score check
+      const prevHighScore = academyProgress.levelHighScores[lesson.id] || 0;
+      const isNewHighScore = (finalScore > prevHighScore);
+      if (isNewHighScore) {
+        academyProgress.levelHighScores[lesson.id] = finalScore;
+      }
+      academyProgress.levelGrades[lesson.id] = grade;
+
       let starsEarned = 0;
       if (mode === 'practice') {
         if (finalAccuracy >= 80) starsEarned = 2;
@@ -6001,10 +6763,14 @@
         academyProgress.levelStars[lesson.id] = starsEarned;
       }
 
-      // Unlock next level up to Level 10
+      // XP calculation
+      const xpGained = Math.round((finalScore / 6) + (starsEarned * 350) + (finalAccuracy >= 95 ? 500 : 0));
+      academyProgress.totalXp = (academyProgress.totalXp || 0) + xpGained;
+
+      // Unlock next level up to Level 16
       if (starsEarned >= 1) {
         const nextId = lesson.id + 1;
-        if (nextId <= 10 && !academyProgress.unlockedLevels.includes(nextId)) {
+        if (nextId <= 16 && !academyProgress.unlockedLevels.includes(nextId)) {
           academyProgress.unlockedLevels.push(nextId);
         }
       }
@@ -6013,14 +6779,14 @@
       updateAcademyHeaderStats();
 
       // Check for Master Graduation:
-      if (lesson.id === 10 && starsEarned >= 1) {
+      if (lesson.id === 16 && starsEarned >= 1) {
         showGraduationModal();
       } else if (starsEarned >= 1) {
-        showCelebrationModal(lesson.id, Math.max(starsEarned, currentStars), finalAccuracy);
+        showCelebrationModal(lesson.id, Math.max(starsEarned, currentStars), finalAccuracy, finalScore, isNewHighScore, finalCombo, xpGained, grade);
       } else {
         setCoachPrompter(
           'active',
-          `Good try! You achieved <strong>${finalAccuracy}%</strong> timing accuracy. Slow the pace down using <strong>[➖ Slower]</strong> or <strong>[🐢 50%]</strong> and try again!`,
+          `Good try! You scored <strong>${finalScore.toLocaleString()} PTS</strong> (${finalAccuracy}% timing accuracy). Slow the pace down using <strong>[➖ Slower]</strong> or <strong>[🐢 50%]</strong> and try again!`,
           null
         );
       }
@@ -6034,24 +6800,40 @@
       triggerDrum('rideBell', t + 0.15, 0.95);
     }
 
-    function showCelebrationModal(levelId, starsEarned, accuracy) {
+    function showCelebrationModal(levelId, starsEarned, accuracy, score, isHighScore, maxCombo, xpGained, grade) {
       triggerCelebrationFanfare();
       const modal = document.getElementById('academy-celebration-modal');
+      const lvlBadge = document.getElementById('celebration-level-badge');
+      const gradeBadge = document.getElementById('celebration-grade-badge');
       const starsDisplay = document.getElementById('celebration-stars-display');
       const titleElem = document.getElementById('celebration-title');
+      const scoreElem = document.getElementById('celebration-score-display');
+      const recordTag = document.getElementById('celebration-highscore-tag');
+      const accElem = document.getElementById('celebration-accuracy-display');
+      const comboElem = document.getElementById('celebration-combo-display');
+      const xpElem = document.getElementById('celebration-xp-display');
+      const careerElem = document.getElementById('celebration-career-display');
       const descElem = document.getElementById('celebration-desc');
 
+      if (lvlBadge) lvlBadge.textContent = `LEVEL ${levelId}`;
+      if (gradeBadge) {
+        gradeBadge.textContent = grade;
+        gradeBadge.className = `grade-seal-badge grade-${(grade || 'a').toLowerCase()}`;
+      }
       if (starsDisplay) {
         let starsStr = '';
         for (let i = 0; i < starsEarned; i++) starsStr += '⭐';
         starsDisplay.textContent = starsStr;
       }
-
-      if (titleElem) {
-        titleElem.textContent = `Level ${levelId} Mastered!`;
-      }
+      if (titleElem) titleElem.textContent = `Level ${levelId} Mastered!`;
+      if (scoreElem) scoreElem.textContent = (score || 0).toLocaleString();
+      if (recordTag) recordTag.style.display = isHighScore ? 'inline-block' : 'none';
+      if (accElem) accElem.textContent = `${accuracy}%`;
+      if (comboElem) comboElem.textContent = `x${maxCombo || 0} 🔥`;
+      if (xpElem) xpElem.textContent = `+${(xpGained || 0).toLocaleString()} XP`;
+      if (careerElem) careerElem.textContent = `${getTotalCareerScore().toLocaleString()} PTS`;
       if (descElem) {
-        descElem.textContent = `Phenomenal drumming! You scored ${accuracy}% timing accuracy. Your 10-finger coordination is advancing rapidly!`;
+        descElem.textContent = `Incredible performance! You locked into the pocket with ${accuracy}% timing accuracy and banked ${(score || 0).toLocaleString()} points!`;
       }
 
       if (modal) modal.classList.add('active');
@@ -6092,7 +6874,7 @@
     document.getElementById('btn-celebration-next').addEventListener('click', () => {
       document.getElementById('academy-celebration-modal').classList.remove('active');
       const nextLevelId = (activeLesson ? activeLesson.id : 1) + 1;
-      if (nextLevelId <= 10) {
+      if (nextLevelId <= 16) {
         openLesson(nextLevelId);
       } else {
         initAcademyUI();
